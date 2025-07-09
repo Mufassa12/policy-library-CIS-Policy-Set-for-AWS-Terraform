@@ -65,34 +65,21 @@ policy "ec2-metadata-imdsv2-required" {
 policy "ec2-security-group-ipv4-ingress-traffic-restriction" {
   source = "./policies/ec2/ec2-security-group-ingress-traffic-restriction-protocol.sentinel"
   enforcement_level = "advisory"
-  params = {
-    prevent_unknown_ipv4_ingress = true
-  }
 }
 
 policy "ec2-security-group-ipv6-ingress-traffic-restriction" {
   source = "./policies/ec2/ec2-security-group-ingress-traffic-restriction-protocol.sentinel"
   enforcement_level = "advisory"
-  params = {
-    prevent_unknown_ipv6_ingress = true
-    prevent_unknown_ipv4_ingress = false
-  }
 }
 
 policy "ec2-security-group-ingress-traffic-restriction-port-22" {
   source = "./policies/ec2/ec2-security-group-ingress-traffic-restriction-port.sentinel"
   enforcement_level = "advisory"
-  params = {
-    port = 22
-  }
 }
 
 policy "ec2-security-group-ingress-traffic-restriction-port-3389" {
   source = "./policies/ec2/ec2-security-group-ingress-traffic-restriction-port.sentinel"
   enforcement_level = "advisory"
-  params = {
-    port = 3389
-  }
 }
 
 policy "efs-encryption-at-rest-enabled" {
@@ -128,17 +115,11 @@ policy "s3-require-ssl" {
 policy "s3-enable-object-logging-for-write-events" {
   source = "./policies/s3/s3-enable-object-logging-for-events.sentinel"
   enforcement_level = "advisory"
-  params = {
-    event_type = "WriteOnly"
-  }
 }
 
 policy "s3-enable-object-logging-for-read-events" {
   source = "./policies/s3/s3-enable-object-logging-for-events.sentinel"
   enforcement_level = "advisory"
-  params = {
-    event_type = "ReadOnly"
-  }
 }
 
 
@@ -180,17 +161,11 @@ policy "iam-no-policies-attached-to-users" {
 policy "iam-password-expiry" {
   source = "./policies/iam/iam-password-expiry.sentinel"
   enforcement_level = "advisory"
-  params = {
-    password_expiry_days = 90
-  }
 }
 
 policy "iam-password-length" {
   source = "./policies/iam/iam-password-length.sentinel"
   enforcement_level = "advisory"
-  params = {
-    password_length = 14
-  }
 }
 
 policy "iam-password-lowercase" {
@@ -206,9 +181,6 @@ policy "iam-password-numbers" {
 policy "iam-password-reuse" {
   source = "./policies/iam/iam-password-reuse.sentinel"
   enforcement_level = "advisory"
-  params = {
-    allowed_password_reuse_limit = 24
-  }
 }
 
 policy "iam-password-symbols" {
